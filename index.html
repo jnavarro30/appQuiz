@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/739f32426d.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='css/styles.css'>
+    <script src='js/script.js' type='module' defer></script>
+    <title>Quiz</title>
+</head>
+<body>
+    <div class="container">
+        <div class="appQuiz">
+            <header class="header">
+                <h1 class="header__question">What programming language is the best?</h1>
+                <span class="header__tracker">1 of 5</span>
+                <div class="header__progress">
+                    <div class="header__bar"></div>
+                </div>
+                <h3 class="header__tagline">Pick an option below!</h3>
+            </header>
+            <main class="main">
+                <ul class="main__choices">
+                  <li class="main__choice">
+                      <label for='choice0'>
+                          <i class="main__icon far fa-circle"></i>
+                      </label>
+                      <input type="radio" class="main__input" name='choice' id='choice0'>
+                      <span class="main__option">Javascript</span>
+                  </li>
+                  <li class="main__choice">
+                    <label for='choice1'>
+                        <i class="main__icon far fa-circle"></i>
+                    </label>
+                    <input type="radio" class="main__input" name='choice' id='choice1'>
+                    <span class="main__option">Python</span>
+                </li>
+                <li class="main__choice">
+                    <label for='choice2'>
+                        <i class="main__icon far fa-circle"></i>
+                    </label>
+                    <input type="radio" class="main__input" name='choice' id='choice2'>
+                    <span class="main__option">Ruby</span>
+                </li>
+                <li class="main__choice">
+                    <label for='choice3'>
+                        <i class="main__icon far fa-circle"></i>
+                    </label>
+                    <input type="radio" class="main__input" name='choice' id='choice3'>
+                    <span class="main__option">Swift</span>
+                </li>
+                </ul>
+            </main>
+            <footer class="footer">
+                <button class="footer__button footer__next">NEXT</button>
+                <button class="footer__button footer__restart">RESTART</button>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

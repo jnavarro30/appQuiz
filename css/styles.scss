@@ -1,0 +1,23 @@
+// settings
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pangolin', cursive;
+}
+
+// header
+@import 'partials/header';
+
+// main
+@import 'partials/main';
+
+//footer
+@import 'partials/footer';
+
+// responsive 
+@media (min-height: 800px) {
+    .appQuiz {
+        margin-top: 15%;
+    }
+}
