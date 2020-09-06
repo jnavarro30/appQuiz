@@ -1,41 +1,29 @@
 const Choices = (_ => {
+    const mainChoicesList = document.querySelector('.main__choices'), 
+          mainInputEls = document.querySelectorAll('input[name="choice"]');
+
     const init = _ => {
         listeners();
     };
 
     const listeners = _ => {
-        let mainChoiceList = document.querySelector('.main__choices');
+        mainChoicesList.addEventListener('click', event => {
+            if(event.target.classList.contains('main__input')) {
+                let selectedChoice = event.target.parentElement.parentElement,
+                    selectedIcon = selectedChoice.firstElementChild.firstElementChild;
+                mainInputEls.forEach(input => {
+                    let choice = input.parentElement.parentElement,
+                        icon = choice.firstElementChild.firstElementChild;
 
-        mainChoiceList.addEventListener('click', event => {
-            if (event.target.classList.contains('main__choice')) {
-                let icon = event.target.firstElementChild.firstElementChild;
-                toggleCheck(icon);
-            } 
+                    choice.classList.remove('selection');
+                    icon.classList.add('fa-circle');
+                    icon.classList.remove('fa-check-circle');
+                });
+                selectedChoice.classList.add('selection');
+                selectedIcon.classList.remove('fa-circle');
+                selectedIcon.classList.add('fa-check-circle');
+            }
         });
-
-        mainChoiceList.addEventListener('click', event => {
-            if (event.target.classList.contains('main__icon')) {
-                let icon = event.target;
-                toggleCheck(icon);
-            } 
-        });
-
-        mainChoiceList.addEventListener('click', event => {
-            if (event.target.classList.contains('main__option')) {
-                let icon = event.target.parentElement.firstElementChild.firstElementChild;
-                toggleCheck(icon);
-            } 
-        });
-    };
-
-    const toggleCheck = item => {
-        let mainIcons = document.querySelectorAll('.main__icon');
-        mainIcons.forEach(icon => {
-            icon.classList.add('fa-circle');
-            icon.classList.remove('fa-check-circle');
-        });
-        item.classList.remove('fa-circle');
-        item.classList.add('fa-check-circle');
     };
 
     return {
@@ -43,7 +31,4 @@ const Choices = (_ => {
     };
 })();
 
-Choices.init();
-
 export default Choices;
-

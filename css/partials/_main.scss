@@ -10,18 +10,6 @@
     &__choice {
         border: 2px solid orange;
         padding: 1rem;
-
-        &:hover {
-            cursor: pointer;
-            background: orange;
-            color: white;
-        }
-
-        &:hover .main__icon{
-            cursor: pointer;
-            background: orange;
-            color: white;
-        }
     }
 
     &__icon {
@@ -34,7 +22,17 @@
     }
 
     &__input {
-        display: none;
+       
+    }
+
+    label {
+        display: block;
+        height: 100%;
+        width: 100%;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
@@ -63,10 +61,6 @@
             margin-left: 1rem;
             font-size: 1.2rem;
         }
-    
-        &__input {
-            display: none;
-        }
     }
 }
 
@@ -94,10 +88,6 @@
             margin-left: 1.2rem;
             font-size: 2rem;
         }
-    
-        &__input {
-            display: none;
-        }
     }
 }
 
@@ -124,10 +114,6 @@
         &__option {
             margin-left: 1.2rem;
             font-size: 2.5rem;
-        }
-    
-        &__input {
-            display: none;
         }
     }
 }
