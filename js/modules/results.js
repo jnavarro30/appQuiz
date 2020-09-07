@@ -22,7 +22,7 @@ const Results = (_ => {
               renderHTML = Quiz.renderHTML;
         
         renderHTML(questionEl, 'Quiz Results ');
-        renderHTML(trackerEl, `Your Score: ${(state.finalScore / state.numberOfQuestions) * 100}%`);
+        renderHTML(trackerEl, `Your Score: ${Math.floor((state.finalScore / state.numberOfQuestions) * 100)}%`);
         renderHTML(taglineEl, 'Complete!');
     };
 

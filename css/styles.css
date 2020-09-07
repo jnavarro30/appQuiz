@@ -144,6 +144,10 @@
   margin-left: 1rem;
 }
 
+.main__input {
+  display: none;
+}
+
 .main label {
   display: block;
   height: 100%;

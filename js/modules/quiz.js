@@ -2,15 +2,19 @@ import Results from './results.js';
 
 const Quiz = (_ => {
     const state = {
-        numberOfQuestions: 5,
+        numberOfQuestions: 3,
         currentQuestionIndex: 0,
-        userScore: 0
+        userScore: 0,
+        categoryId: 27,
+        difficulty: 'easy'
     };
 
     let {
         numberOfQuestions,
         currentQuestionIndex,
-        userScore
+        userScore, 
+        categoryId,
+        difficulty
     } = state;
 
     const init = _ => {
@@ -22,7 +26,7 @@ const Quiz = (_ => {
     };
 
     const renderQuiz = async _ => {
-        const triviaURL = `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=27&difficulty=easy&type=multiple`,
+        const triviaURL = `https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${categoryId}&difficulty=${difficulty}&type=multiple`,
             request = await fetch(triviaURL),
             data = await request.json(),
             triviaData = data.results;
@@ -38,6 +42,14 @@ const Quiz = (_ => {
             triviaQuestion = triviaObj.question,
             triviaAnswer = triviaObj.correct_answer,
             triviaChoices = [...triviaObj.incorrect_answers, triviaAnswer];
+
+        const shuffleChoices = arr => {
+            for (let i = arr.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        };
 
         const quizDataUpdate = _ => {
             triviaObj = triviaData[currentQuestionIndex];
@@ -56,6 +68,7 @@ const Quiz = (_ => {
         };
 
         const renderOptions = _ => {
+            shuffleChoices(triviaChoices);
             optionEls.forEach((option, index) => {
                 option.textContent = triviaChoices[index];
             });

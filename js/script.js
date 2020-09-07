@@ -4,5 +4,5 @@ import Results from './modules/results.js';
 
 Choices.init();
 Quiz.init();
-Results.init();
+
 
