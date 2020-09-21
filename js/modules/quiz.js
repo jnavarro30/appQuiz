@@ -2,7 +2,7 @@ import Results from './results.js';
 
 const Quiz = (_ => {
     const state = {
-        numberOfQuestions: 3,
+        numberOfQuestions: 5,
         currentQuestionIndex: 0,
         userScore: 0,
         categoryId: 27,

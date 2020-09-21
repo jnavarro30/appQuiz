@@ -158,6 +158,10 @@
   cursor: pointer;
 }
 
+.main .fa-circle {
+  color: orange;
+}
+
 @media (min-height: 700px) {
   .main__choices {
     display: -ms-grid;
@@ -202,6 +206,12 @@
   }
   .main__option {
     margin-left: 1.2rem;
+    font-size: 2rem;
+  }
+  .main .fa-circle {
+    font-size: 2rem;
+  }
+  .main .fa-check-circle {
     font-size: 2rem;
   }
 }
